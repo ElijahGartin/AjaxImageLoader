@@ -9,7 +9,8 @@ $( document ).ready(function() {
 	
 	var self = this;
 	var url = "";
-	
+	var flag;
+	$('input.text').keyup( $.debounce( 250, text_2 ) );
 		$( "#largeClick" ).on( "click", function( event ) {
 			$.ajax({
 				type: "GET",
@@ -29,15 +30,18 @@ $( document ).ready(function() {
 			
 		});//end .on click, function event	
 
-		function showImage() {
-			setTimeout(function(){///this function fire after 1ms delay
-      				$('#imageGIF').attr('src',url);
-		   			$('#LinkToSite').show();
-			}, 1);
-			
-		   
-		}//end function showImage()
+	function ajax_call( event ) {
+		
+	};
+
+
+	function showImage() {
+		setTimeout(function(){///this function fire after 1ms delay
+				$('#imageGIF').attr('src',url);
+				$('#LinkToSite').show();
+		}, 1); 
+	}//end function showImage()
 	
 
-	});//end document ready
+});//end document ready
 	
