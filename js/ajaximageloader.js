@@ -9,8 +9,14 @@ $( document ).ready(function() {
 	
 	var self = this;
 	var url = "";
-	var flag;
+	
+	/*EXAMPLE DEBOUNCE METHOD
 	$('input.text').keyup( $.debounce( 250, text_2 ) );
+	*/
+	
+	//Most likely will need to fix this function to narrow it down to one ajax call and it firing off the debounce method
+	function ajax_call( event ) {
+		//Large GIF AJAX Call
 		$( "#largeClick" ).on( "click", function( event ) {
 			$.ajax({
 				type: "GET",
@@ -19,7 +25,8 @@ $( document ).ready(function() {
 			});//end of .ajax call
 			url = "img/KunTaoRevolver.gif";
 		});//end .on click, function event
-	
+		
+		//Small GIF AJAX Call
 		$( "#smallClick" ).on( "click", function( event ) {
 			$.ajax({
 				type: "GET",
@@ -27,11 +34,8 @@ $( document ).ready(function() {
 				success: showImage()
 			});//end of .ajax call
 			url = "img/KunTaoRevolver_200h.gif";
-			
-		});//end .on click, function event	
-
-	function ajax_call( event ) {
-		
+				
+			});//end .on click, function event			
 	};
 
 
